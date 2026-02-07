@@ -16,5 +16,8 @@
   },
   "1.0.6": {
     "en": "Added flowcards for actions"
+  },
+  "1.0.7": {
+    "en": "added svg logo"
   }
 }
