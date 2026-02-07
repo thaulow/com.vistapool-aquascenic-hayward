@@ -7,5 +7,8 @@
   },
   "1.0.3": {
     "en": "logging"
+  },
+  "1.0.4": {
+    "en": "Fixed signin"
   }
 }
