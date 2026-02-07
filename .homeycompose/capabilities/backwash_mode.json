@@ -1,0 +1,27 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Backwash Mode"
+  },
+  "desc": {
+    "en": "Backwash valve mode"
+  },
+  "values": [
+    {
+      "id": "automatic",
+      "title": {
+        "en": "Automatic"
+      }
+    },
+    {
+      "id": "manual",
+      "title": {
+        "en": "Manual"
+      }
+    }
+  ],
+  "getable": true,
+  "setable": true,
+  "uiComponent": "picker",
+  "icon": "/assets/capabilities/backwash.svg"
+}

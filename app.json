@@ -16,7 +16,7 @@
   "category": [
     "appliances"
   ],
-  "brandColor": "#2980B9",
+  "brandColor": "#68c8ee",
   "permissions": [],
   "images": {
     "small": "/assets/images/small.png",
@@ -27,10 +27,579 @@
     "name": "Thomas Thaulow",
     "email": "thaulow@thaulow.co"
   },
+  "flow": {
+    "triggers": [
+      {
+        "title": {
+          "en": "Chlorination shock started"
+        },
+        "hint": {
+          "en": "When chlorination shock treatment is activated"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aquascenic"
+          }
+        ],
+        "id": "chlorination_shock_started"
+      },
+      {
+        "title": {
+          "en": "Chlorination shock stopped"
+        },
+        "hint": {
+          "en": "When chlorination shock treatment is deactivated"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aquascenic"
+          }
+        ],
+        "id": "chlorination_shock_stopped"
+      },
+      {
+        "title": {
+          "en": "Filtration started"
+        },
+        "hint": {
+          "en": "When the filtration pump starts running"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aquascenic"
+          }
+        ],
+        "id": "filtration_started"
+      },
+      {
+        "title": {
+          "en": "Filtration stopped"
+        },
+        "hint": {
+          "en": "When the filtration pump stops running"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aquascenic"
+          }
+        ],
+        "id": "filtration_stopped"
+      },
+      {
+        "title": {
+          "en": "Pool light turned off"
+        },
+        "hint": {
+          "en": "When the pool light is turned off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aquascenic"
+          }
+        ],
+        "id": "light_turned_off"
+      },
+      {
+        "title": {
+          "en": "Pool light turned on"
+        },
+        "hint": {
+          "en": "When the pool light is turned on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aquascenic"
+          }
+        ],
+        "id": "light_turned_on"
+      }
+    ],
+    "conditions": [
+      {
+        "title": {
+          "en": "Chlorination shock !{{is|is not}} active"
+        },
+        "hint": {
+          "en": "Check if chlorination shock is active"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aquascenic"
+          }
+        ],
+        "id": "is_chlorination_shock_active"
+      },
+      {
+        "title": {
+          "en": "Filtration !{{is|is not}} running"
+        },
+        "hint": {
+          "en": "Check if the filtration pump is running"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aquascenic"
+          }
+        ],
+        "id": "is_filtration_running"
+      },
+      {
+        "title": {
+          "en": "Pool light !{{is|is not}} on"
+        },
+        "hint": {
+          "en": "Check if the pool light is on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aquascenic"
+          }
+        ],
+        "id": "is_light_on"
+      }
+    ],
+    "actions": [
+      {
+        "title": {
+          "en": "Close pool cover"
+        },
+        "titleFormatted": {
+          "en": "Close pool cover"
+        },
+        "hint": {
+          "en": "Close the pool cover"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aquascenic"
+          }
+        ],
+        "id": "close_cover"
+      },
+      {
+        "title": {
+          "en": "Disable chlorination shock"
+        },
+        "titleFormatted": {
+          "en": "Disable chlorination shock"
+        },
+        "hint": {
+          "en": "Stop chlorination shock treatment"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aquascenic"
+          }
+        ],
+        "id": "disable_chlorination_shock"
+      },
+      {
+        "title": {
+          "en": "Enable chlorination shock"
+        },
+        "titleFormatted": {
+          "en": "Enable chlorination shock"
+        },
+        "hint": {
+          "en": "Start a chlorination shock treatment"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aquascenic"
+          }
+        ],
+        "id": "enable_chlorination_shock"
+      },
+      {
+        "title": {
+          "en": "Open pool cover"
+        },
+        "titleFormatted": {
+          "en": "Open pool cover"
+        },
+        "hint": {
+          "en": "Open the pool cover"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aquascenic"
+          }
+        ],
+        "id": "open_cover"
+      },
+      {
+        "title": {
+          "en": "Set filtration mode"
+        },
+        "titleFormatted": {
+          "en": "Set filtration mode to [[mode]]"
+        },
+        "hint": {
+          "en": "Set the filtration pump mode"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aquascenic"
+          },
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "title": {
+              "en": "Mode"
+            },
+            "values": [
+              {
+                "id": "auto",
+                "title": {
+                  "en": "Automatic"
+                }
+              },
+              {
+                "id": "manual",
+                "title": {
+                  "en": "Manual"
+                }
+              },
+              {
+                "id": "smart",
+                "title": {
+                  "en": "Smart"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "set_filtration_mode"
+      },
+      {
+        "title": {
+          "en": "Set filtration speed"
+        },
+        "titleFormatted": {
+          "en": "Set filtration speed to [[speed]]"
+        },
+        "hint": {
+          "en": "Set the filtration pump speed"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aquascenic"
+          },
+          {
+            "type": "dropdown",
+            "name": "speed",
+            "title": {
+              "en": "Speed"
+            },
+            "values": [
+              {
+                "id": "slow",
+                "title": {
+                  "en": "Slow"
+                }
+              },
+              {
+                "id": "medium",
+                "title": {
+                  "en": "Medium"
+                }
+              },
+              {
+                "id": "high",
+                "title": {
+                  "en": "High"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "set_filtration_speed"
+      },
+      {
+        "title": {
+          "en": "Set hydrolysis level"
+        },
+        "titleFormatted": {
+          "en": "Set hydrolysis level to [[level]]%"
+        },
+        "hint": {
+          "en": "Set the target hydrolysis production level"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aquascenic"
+          },
+          {
+            "type": "range",
+            "name": "level",
+            "title": {
+              "en": "Level"
+            },
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "label": "%",
+            "labelDecimals": 0
+          }
+        ],
+        "id": "set_hydrolysis_level"
+      },
+      {
+        "title": {
+          "en": "Start backwash"
+        },
+        "titleFormatted": {
+          "en": "Start backwash"
+        },
+        "hint": {
+          "en": "Start the backwash cycle"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aquascenic"
+          }
+        ],
+        "id": "start_backwash"
+      },
+      {
+        "title": {
+          "en": "Stop backwash"
+        },
+        "titleFormatted": {
+          "en": "Stop backwash"
+        },
+        "hint": {
+          "en": "Stop the backwash cycle"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aquascenic"
+          }
+        ],
+        "id": "stop_backwash"
+      },
+      {
+        "title": {
+          "en": "Turn filtration off"
+        },
+        "titleFormatted": {
+          "en": "Turn filtration off"
+        },
+        "hint": {
+          "en": "Turn off the filtration pump (sets mode to automatic)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aquascenic"
+          }
+        ],
+        "id": "turn_filtration_off"
+      },
+      {
+        "title": {
+          "en": "Turn filtration on"
+        },
+        "titleFormatted": {
+          "en": "Turn filtration on"
+        },
+        "hint": {
+          "en": "Turn on the filtration pump (sets mode to manual)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aquascenic"
+          }
+        ],
+        "id": "turn_filtration_on"
+      },
+      {
+        "title": {
+          "en": "Turn pool light off"
+        },
+        "titleFormatted": {
+          "en": "Turn pool light off"
+        },
+        "hint": {
+          "en": "Turn off the pool light"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aquascenic"
+          }
+        ],
+        "id": "turn_light_off"
+      },
+      {
+        "title": {
+          "en": "Turn pool light on"
+        },
+        "titleFormatted": {
+          "en": "Turn pool light on"
+        },
+        "hint": {
+          "en": "Turn on the pool light"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aquascenic"
+          }
+        ],
+        "id": "turn_light_on"
+      },
+      {
+        "title": {
+          "en": "Turn relay off"
+        },
+        "titleFormatted": {
+          "en": "Turn [[relay]] off"
+        },
+        "hint": {
+          "en": "Turn off an auxiliary relay"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aquascenic"
+          },
+          {
+            "type": "dropdown",
+            "name": "relay",
+            "title": {
+              "en": "Relay"
+            },
+            "values": [
+              {
+                "id": "1",
+                "title": {
+                  "en": "Relay 1"
+                }
+              },
+              {
+                "id": "2",
+                "title": {
+                  "en": "Relay 2"
+                }
+              },
+              {
+                "id": "3",
+                "title": {
+                  "en": "Relay 3"
+                }
+              },
+              {
+                "id": "4",
+                "title": {
+                  "en": "Relay 4"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "turn_relay_off"
+      },
+      {
+        "title": {
+          "en": "Turn relay on"
+        },
+        "titleFormatted": {
+          "en": "Turn [[relay]] on"
+        },
+        "hint": {
+          "en": "Turn on an auxiliary relay"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aquascenic"
+          },
+          {
+            "type": "dropdown",
+            "name": "relay",
+            "title": {
+              "en": "Relay"
+            },
+            "values": [
+              {
+                "id": "1",
+                "title": {
+                  "en": "Relay 1"
+                }
+              },
+              {
+                "id": "2",
+                "title": {
+                  "en": "Relay 2"
+                }
+              },
+              {
+                "id": "3",
+                "title": {
+                  "en": "Relay 3"
+                }
+              },
+              {
+                "id": "4",
+                "title": {
+                  "en": "Relay 4"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "turn_relay_on"
+      }
+    ]
+  },
   "drivers": [
     {
       "name": {
-        "en": "Aquascenic Pool Controller"
+        "en": "Pool Controller"
       },
       "class": "other",
       "capabilities": [
@@ -184,6 +753,477 @@
     }
   ],
   "capabilities": {
+    "aux_relay_1_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Aux Relay 1 Mode"
+      },
+      "desc": {
+        "en": "Auxiliary relay 1 mode"
+      },
+      "values": [
+        {
+          "id": "auto",
+          "title": {
+            "en": "Automatic"
+          }
+        },
+        {
+          "id": "manual",
+          "title": {
+            "en": "Manual"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker",
+      "icon": "/assets/capabilities/relay.svg"
+    },
+    "aux_relay_1_onoff": {
+      "type": "boolean",
+      "title": {
+        "en": "Aux Relay 1"
+      },
+      "desc": {
+        "en": "Auxiliary relay 1 on/off"
+      },
+      "insights": false,
+      "insightsTitleTrue": {
+        "en": "Relay 1 activated"
+      },
+      "insightsTitleFalse": {
+        "en": "Relay 1 deactivated"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "toggle",
+      "icon": "/assets/capabilities/relay.svg"
+    },
+    "aux_relay_2_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Aux Relay 2 Mode"
+      },
+      "desc": {
+        "en": "Auxiliary relay 2 mode"
+      },
+      "values": [
+        {
+          "id": "auto",
+          "title": {
+            "en": "Automatic"
+          }
+        },
+        {
+          "id": "manual",
+          "title": {
+            "en": "Manual"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker",
+      "icon": "/assets/capabilities/relay.svg"
+    },
+    "aux_relay_2_onoff": {
+      "type": "boolean",
+      "title": {
+        "en": "Aux Relay 2"
+      },
+      "desc": {
+        "en": "Auxiliary relay 2 on/off"
+      },
+      "insights": false,
+      "insightsTitleTrue": {
+        "en": "Relay 2 activated"
+      },
+      "insightsTitleFalse": {
+        "en": "Relay 2 deactivated"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "toggle",
+      "icon": "/assets/capabilities/relay.svg"
+    },
+    "aux_relay_3_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Aux Relay 3 Mode"
+      },
+      "desc": {
+        "en": "Auxiliary relay 3 mode"
+      },
+      "values": [
+        {
+          "id": "auto",
+          "title": {
+            "en": "Automatic"
+          }
+        },
+        {
+          "id": "manual",
+          "title": {
+            "en": "Manual"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker",
+      "icon": "/assets/capabilities/relay.svg"
+    },
+    "aux_relay_3_onoff": {
+      "type": "boolean",
+      "title": {
+        "en": "Aux Relay 3"
+      },
+      "desc": {
+        "en": "Auxiliary relay 3 on/off"
+      },
+      "insights": false,
+      "insightsTitleTrue": {
+        "en": "Relay 3 activated"
+      },
+      "insightsTitleFalse": {
+        "en": "Relay 3 deactivated"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "toggle",
+      "icon": "/assets/capabilities/relay.svg"
+    },
+    "aux_relay_4_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Aux Relay 4 Mode"
+      },
+      "desc": {
+        "en": "Auxiliary relay 4 mode"
+      },
+      "values": [
+        {
+          "id": "auto",
+          "title": {
+            "en": "Automatic"
+          }
+        },
+        {
+          "id": "manual",
+          "title": {
+            "en": "Manual"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker",
+      "icon": "/assets/capabilities/relay.svg"
+    },
+    "aux_relay_4_onoff": {
+      "type": "boolean",
+      "title": {
+        "en": "Aux Relay 4"
+      },
+      "desc": {
+        "en": "Auxiliary relay 4 on/off"
+      },
+      "insights": false,
+      "insightsTitleTrue": {
+        "en": "Relay 4 activated"
+      },
+      "insightsTitleFalse": {
+        "en": "Relay 4 deactivated"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "toggle",
+      "icon": "/assets/capabilities/relay.svg"
+    },
+    "backwash_interval": {
+      "type": "number",
+      "title": {
+        "en": "Backwash Interval"
+      },
+      "units": {
+        "en": "h"
+      },
+      "desc": {
+        "en": "Backwash interval in hours"
+      },
+      "insights": false,
+      "chartType": "stepLine",
+      "decimals": 0,
+      "min": 0,
+      "max": 999,
+      "step": 1,
+      "getable": true,
+      "setable": true,
+      "uiComponent": "slider",
+      "icon": "/assets/capabilities/backwash.svg"
+    },
+    "backwash_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Backwash Mode"
+      },
+      "desc": {
+        "en": "Backwash valve mode"
+      },
+      "values": [
+        {
+          "id": "automatic",
+          "title": {
+            "en": "Automatic"
+          }
+        },
+        {
+          "id": "manual",
+          "title": {
+            "en": "Manual"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker",
+      "icon": "/assets/capabilities/backwash.svg"
+    },
+    "backwash_onoff": {
+      "type": "boolean",
+      "title": {
+        "en": "Backwash"
+      },
+      "desc": {
+        "en": "Backwash active"
+      },
+      "insights": false,
+      "insightsTitleTrue": {
+        "en": "Backwash started"
+      },
+      "insightsTitleFalse": {
+        "en": "Backwash stopped"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "toggle",
+      "icon": "/assets/capabilities/backwash.svg"
+    },
+    "chlorination_shock": {
+      "type": "boolean",
+      "title": {
+        "en": "Chlorination Shock"
+      },
+      "desc": {
+        "en": "Chlorination shock treatment"
+      },
+      "insights": false,
+      "insightsTitleTrue": {
+        "en": "Shock started"
+      },
+      "insightsTitleFalse": {
+        "en": "Shock stopped"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "toggle",
+      "icon": "/assets/capabilities/shock.svg"
+    },
+    "cover_onoff": {
+      "type": "boolean",
+      "title": {
+        "en": "Cover"
+      },
+      "desc": {
+        "en": "Pool cover control"
+      },
+      "insights": false,
+      "insightsTitleTrue": {
+        "en": "Cover opened"
+      },
+      "insightsTitleFalse": {
+        "en": "Cover closed"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "toggle",
+      "icon": "/assets/capabilities/cover.svg"
+    },
+    "filtration_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Filtration Mode"
+      },
+      "desc": {
+        "en": "Filtration pump mode"
+      },
+      "values": [
+        {
+          "id": "auto",
+          "title": {
+            "en": "Automatic"
+          }
+        },
+        {
+          "id": "manual",
+          "title": {
+            "en": "Manual"
+          }
+        },
+        {
+          "id": "smart",
+          "title": {
+            "en": "Smart"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker",
+      "icon": "/assets/capabilities/filtration.svg"
+    },
+    "filtration_speed": {
+      "type": "enum",
+      "title": {
+        "en": "Pump Speed"
+      },
+      "desc": {
+        "en": "Manual filtration pump speed"
+      },
+      "values": [
+        {
+          "id": "slow",
+          "title": {
+            "en": "Slow"
+          }
+        },
+        {
+          "id": "medium",
+          "title": {
+            "en": "Medium"
+          }
+        },
+        {
+          "id": "high",
+          "title": {
+            "en": "High"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker",
+      "icon": "/assets/capabilities/filtration.svg"
+    },
+    "ionization_activation": {
+      "type": "enum",
+      "title": {
+        "en": "Ionization Activation"
+      },
+      "desc": {
+        "en": "Ionization activation duration"
+      },
+      "values": [
+        {
+          "id": "10",
+          "title": {
+            "en": "10 minutes"
+          }
+        },
+        {
+          "id": "20",
+          "title": {
+            "en": "20 minutes"
+          }
+        },
+        {
+          "id": "30",
+          "title": {
+            "en": "30 minutes"
+          }
+        },
+        {
+          "id": "always",
+          "title": {
+            "en": "Always"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker",
+      "icon": "/assets/capabilities/ionization.svg"
+    },
+    "ionization_intensity": {
+      "type": "number",
+      "title": {
+        "en": "Ionization Intensity"
+      },
+      "units": {
+        "en": ""
+      },
+      "desc": {
+        "en": "Copper/silver ionization intensity"
+      },
+      "insights": false,
+      "chartType": "stepLine",
+      "decimals": 0,
+      "min": 0,
+      "max": 250,
+      "step": 1,
+      "getable": true,
+      "setable": true,
+      "uiComponent": "slider",
+      "icon": "/assets/capabilities/ionization.svg"
+    },
+    "lighting_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Lighting Mode"
+      },
+      "desc": {
+        "en": "Pool lighting mode"
+      },
+      "values": [
+        {
+          "id": "automatic",
+          "title": {
+            "en": "Automatic"
+          }
+        },
+        {
+          "id": "manual",
+          "title": {
+            "en": "Manual"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker",
+      "icon": "/assets/capabilities/lighting.svg"
+    },
+    "lighting_onoff": {
+      "type": "boolean",
+      "title": {
+        "en": "Pool Light"
+      },
+      "desc": {
+        "en": "Pool lighting on/off"
+      },
+      "insights": false,
+      "insightsTitleTrue": {
+        "en": "Light turned on"
+      },
+      "insightsTitleFalse": {
+        "en": "Light turned off"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "toggle",
+      "icon": "/assets/capabilities/lighting.svg"
+    },
     "measure_orp": {
       "type": "number",
       "title": {
@@ -326,6 +1366,93 @@
       "setable": false,
       "uiComponent": "sensor",
       "icon": "/assets/capabilities/filtration.svg"
+    },
+    "status_ionization": {
+      "type": "number",
+      "title": {
+        "en": "Ionization"
+      },
+      "units": {
+        "en": "mA"
+      },
+      "desc": {
+        "en": "Current ionization level"
+      },
+      "insights": false,
+      "chartType": "spline",
+      "decimals": 0,
+      "min": 0,
+      "max": 250,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/ionization.svg"
+    },
+    "target_hydrolysis_level": {
+      "type": "number",
+      "title": {
+        "en": "Hydrolysis Level"
+      },
+      "units": {
+        "en": "%"
+      },
+      "desc": {
+        "en": "Target hydrolysis production level"
+      },
+      "insights": false,
+      "chartType": "stepLine",
+      "decimals": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "getable": true,
+      "setable": true,
+      "uiComponent": "slider",
+      "icon": "/assets/capabilities/salt.svg"
+    },
+    "target_ph": {
+      "type": "number",
+      "title": {
+        "en": "pH Setpoint"
+      },
+      "units": {
+        "en": "pH"
+      },
+      "desc": {
+        "en": "Target pH level"
+      },
+      "insights": false,
+      "chartType": "stepLine",
+      "decimals": 1,
+      "min": 0,
+      "max": 14,
+      "step": 0.1,
+      "getable": true,
+      "setable": true,
+      "uiComponent": "slider",
+      "icon": "/assets/capabilities/ph.svg"
+    },
+    "target_rx": {
+      "type": "number",
+      "title": {
+        "en": "ORP Setpoint"
+      },
+      "units": {
+        "en": "mV"
+      },
+      "desc": {
+        "en": "Target ORP/RX level"
+      },
+      "insights": false,
+      "chartType": "stepLine",
+      "decimals": 0,
+      "min": 0,
+      "max": 1000,
+      "step": 10,
+      "getable": true,
+      "setable": true,
+      "uiComponent": "slider",
+      "icon": "/assets/capabilities/orp.svg"
     }
   }
 }

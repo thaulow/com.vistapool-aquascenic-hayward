@@ -1,0 +1,20 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Backwash"
+  },
+  "desc": {
+    "en": "Backwash active"
+  },
+  "insights": false,
+  "insightsTitleTrue": {
+    "en": "Backwash started"
+  },
+  "insightsTitleFalse": {
+    "en": "Backwash stopped"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "toggle",
+  "icon": "/assets/capabilities/backwash.svg"
+}

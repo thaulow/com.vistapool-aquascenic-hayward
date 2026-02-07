@@ -1,0 +1,27 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Lighting Mode"
+  },
+  "desc": {
+    "en": "Pool lighting mode"
+  },
+  "values": [
+    {
+      "id": "automatic",
+      "title": {
+        "en": "Automatic"
+      }
+    },
+    {
+      "id": "manual",
+      "title": {
+        "en": "Manual"
+      }
+    }
+  ],
+  "getable": true,
+  "setable": true,
+  "uiComponent": "picker",
+  "icon": "/assets/capabilities/lighting.svg"
+}

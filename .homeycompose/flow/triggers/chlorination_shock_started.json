@@ -1,0 +1,15 @@
+{
+  "title": {
+    "en": "Chlorination shock started"
+  },
+  "hint": {
+    "en": "When chlorination shock treatment is activated"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=aquascenic"
+    }
+  ]
+}

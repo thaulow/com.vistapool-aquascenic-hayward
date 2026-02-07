@@ -1,0 +1,20 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Cover"
+  },
+  "desc": {
+    "en": "Pool cover control"
+  },
+  "insights": false,
+  "insightsTitleTrue": {
+    "en": "Cover opened"
+  },
+  "insightsTitleFalse": {
+    "en": "Cover closed"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "toggle",
+  "icon": "/assets/capabilities/cover.svg"
+}

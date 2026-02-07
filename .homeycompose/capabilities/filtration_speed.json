@@ -1,0 +1,33 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Pump Speed"
+  },
+  "desc": {
+    "en": "Manual filtration pump speed"
+  },
+  "values": [
+    {
+      "id": "slow",
+      "title": {
+        "en": "Slow"
+      }
+    },
+    {
+      "id": "medium",
+      "title": {
+        "en": "Medium"
+      }
+    },
+    {
+      "id": "high",
+      "title": {
+        "en": "High"
+      }
+    }
+  ],
+  "getable": true,
+  "setable": true,
+  "uiComponent": "picker",
+  "icon": "/assets/capabilities/filtration.svg"
+}

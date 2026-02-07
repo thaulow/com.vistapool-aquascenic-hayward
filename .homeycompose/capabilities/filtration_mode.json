@@ -1,0 +1,33 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Filtration Mode"
+  },
+  "desc": {
+    "en": "Filtration pump mode"
+  },
+  "values": [
+    {
+      "id": "auto",
+      "title": {
+        "en": "Automatic"
+      }
+    },
+    {
+      "id": "manual",
+      "title": {
+        "en": "Manual"
+      }
+    },
+    {
+      "id": "smart",
+      "title": {
+        "en": "Smart"
+      }
+    }
+  ],
+  "getable": true,
+  "setable": true,
+  "uiComponent": "picker",
+  "icon": "/assets/capabilities/filtration.svg"
+}

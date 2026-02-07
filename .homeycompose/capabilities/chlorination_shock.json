@@ -1,0 +1,20 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Chlorination Shock"
+  },
+  "desc": {
+    "en": "Chlorination shock treatment"
+  },
+  "insights": false,
+  "insightsTitleTrue": {
+    "en": "Shock started"
+  },
+  "insightsTitleFalse": {
+    "en": "Shock stopped"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "toggle",
+  "icon": "/assets/capabilities/shock.svg"
+}

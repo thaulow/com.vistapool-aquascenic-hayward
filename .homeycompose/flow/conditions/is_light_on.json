@@ -1,0 +1,15 @@
+{
+  "title": {
+    "en": "Pool light !{{is|is not}} on"
+  },
+  "hint": {
+    "en": "Check if the pool light is on"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=aquascenic"
+    }
+  ]
+}

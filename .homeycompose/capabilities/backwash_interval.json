@@ -1,0 +1,22 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Backwash Interval"
+  },
+  "units": {
+    "en": "h"
+  },
+  "desc": {
+    "en": "Backwash interval in hours"
+  },
+  "insights": false,
+  "chartType": "stepLine",
+  "decimals": 0,
+  "min": 0,
+  "max": 999,
+  "step": 1,
+  "getable": true,
+  "setable": true,
+  "uiComponent": "slider",
+  "icon": "/assets/capabilities/backwash.svg"
+}

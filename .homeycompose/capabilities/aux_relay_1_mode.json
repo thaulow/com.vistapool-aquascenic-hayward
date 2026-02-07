@@ -1,0 +1,27 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Aux Relay 1 Mode"
+  },
+  "desc": {
+    "en": "Auxiliary relay 1 mode"
+  },
+  "values": [
+    {
+      "id": "auto",
+      "title": {
+        "en": "Automatic"
+      }
+    },
+    {
+      "id": "manual",
+      "title": {
+        "en": "Manual"
+      }
+    }
+  ],
+  "getable": true,
+  "setable": true,
+  "uiComponent": "picker",
+  "icon": "/assets/capabilities/relay.svg"
+}

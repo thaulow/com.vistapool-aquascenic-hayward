@@ -1,0 +1,22 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Hydrolysis Level"
+  },
+  "units": {
+    "en": "%"
+  },
+  "desc": {
+    "en": "Target hydrolysis production level"
+  },
+  "insights": false,
+  "chartType": "stepLine",
+  "decimals": 0,
+  "min": 0,
+  "max": 100,
+  "step": 1,
+  "getable": true,
+  "setable": true,
+  "uiComponent": "slider",
+  "icon": "/assets/capabilities/salt.svg"
+}

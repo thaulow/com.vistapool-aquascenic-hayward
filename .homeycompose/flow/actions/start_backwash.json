@@ -1,0 +1,18 @@
+{
+  "title": {
+    "en": "Start backwash"
+  },
+  "titleFormatted": {
+    "en": "Start backwash"
+  },
+  "hint": {
+    "en": "Start the backwash cycle"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=aquascenic"
+    }
+  ]
+}

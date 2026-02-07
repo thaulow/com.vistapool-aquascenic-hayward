@@ -1,0 +1,22 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Ionization Intensity"
+  },
+  "units": {
+    "en": ""
+  },
+  "desc": {
+    "en": "Copper/silver ionization intensity"
+  },
+  "insights": false,
+  "chartType": "stepLine",
+  "decimals": 0,
+  "min": 0,
+  "max": 250,
+  "step": 1,
+  "getable": true,
+  "setable": true,
+  "uiComponent": "slider",
+  "icon": "/assets/capabilities/ionization.svg"
+}

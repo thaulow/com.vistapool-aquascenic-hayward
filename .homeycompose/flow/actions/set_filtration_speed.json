@@ -1,0 +1,30 @@
+{
+  "title": {
+    "en": "Set filtration speed"
+  },
+  "titleFormatted": {
+    "en": "Set filtration speed to [[speed]]"
+  },
+  "hint": {
+    "en": "Set the filtration pump speed"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=aquascenic"
+    },
+    {
+      "type": "dropdown",
+      "name": "speed",
+      "title": {
+        "en": "Speed"
+      },
+      "values": [
+        { "id": "slow", "title": { "en": "Slow" } },
+        { "id": "medium", "title": { "en": "Medium" } },
+        { "id": "high", "title": { "en": "High" } }
+      ]
+    }
+  ]
+}

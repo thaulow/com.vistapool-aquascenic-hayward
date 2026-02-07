@@ -1,0 +1,15 @@
+{
+  "title": {
+    "en": "Filtration started"
+  },
+  "hint": {
+    "en": "When the filtration pump starts running"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=aquascenic"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "title": {
+    "en": "Set hydrolysis level"
+  },
+  "titleFormatted": {
+    "en": "Set hydrolysis level to [[level]]%"
+  },
+  "hint": {
+    "en": "Set the target hydrolysis production level"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=aquascenic"
+    },
+    {
+      "type": "range",
+      "name": "level",
+      "title": {
+        "en": "Level"
+      },
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "label": "%",
+      "labelDecimals": 0
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "title": {
+    "en": "Pool light turned on"
+  },
+  "hint": {
+    "en": "When the pool light is turned on"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=aquascenic"
+    }
+  ]
+}

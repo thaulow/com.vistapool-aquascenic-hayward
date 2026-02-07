@@ -1,0 +1,22 @@
+{
+  "type": "number",
+  "title": {
+    "en": "ORP Setpoint"
+  },
+  "units": {
+    "en": "mV"
+  },
+  "desc": {
+    "en": "Target ORP/RX level"
+  },
+  "insights": false,
+  "chartType": "stepLine",
+  "decimals": 0,
+  "min": 0,
+  "max": 1000,
+  "step": 10,
+  "getable": true,
+  "setable": true,
+  "uiComponent": "slider",
+  "icon": "/assets/capabilities/orp.svg"
+}

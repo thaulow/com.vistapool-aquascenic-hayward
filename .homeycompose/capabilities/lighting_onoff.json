@@ -1,0 +1,20 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Pool Light"
+  },
+  "desc": {
+    "en": "Pool lighting on/off"
+  },
+  "insights": false,
+  "insightsTitleTrue": {
+    "en": "Light turned on"
+  },
+  "insightsTitleFalse": {
+    "en": "Light turned off"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "toggle",
+  "icon": "/assets/capabilities/lighting.svg"
+}

@@ -1,0 +1,20 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Aux Relay 1"
+  },
+  "desc": {
+    "en": "Auxiliary relay 1 on/off"
+  },
+  "insights": false,
+  "insightsTitleTrue": {
+    "en": "Relay 1 activated"
+  },
+  "insightsTitleFalse": {
+    "en": "Relay 1 deactivated"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "toggle",
+  "icon": "/assets/capabilities/relay.svg"
+}

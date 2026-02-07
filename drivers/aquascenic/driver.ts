@@ -7,6 +7,100 @@ class AquascenicDriver extends Homey.Driver {
 
   async onInit() {
     this.log('AquascenicDriver has been initialized');
+
+    // Action cards
+    this.homey.flow.getActionCard('enable_chlorination_shock')
+      .registerRunListener(async (args) => {
+        await args.device.triggerCapabilityListener('chlorination_shock', true);
+      });
+
+    this.homey.flow.getActionCard('disable_chlorination_shock')
+      .registerRunListener(async (args) => {
+        await args.device.triggerCapabilityListener('chlorination_shock', false);
+      });
+
+    this.homey.flow.getActionCard('turn_light_on')
+      .registerRunListener(async (args) => {
+        await args.device.triggerCapabilityListener('lighting_onoff', true);
+      });
+
+    this.homey.flow.getActionCard('turn_light_off')
+      .registerRunListener(async (args) => {
+        await args.device.triggerCapabilityListener('lighting_onoff', false);
+      });
+
+    this.homey.flow.getActionCard('turn_relay_on')
+      .registerRunListener(async (args) => {
+        const cap = `aux_relay_${args.relay}_onoff`;
+        await args.device.triggerCapabilityListener(cap, true);
+      });
+
+    this.homey.flow.getActionCard('turn_relay_off')
+      .registerRunListener(async (args) => {
+        const cap = `aux_relay_${args.relay}_onoff`;
+        await args.device.triggerCapabilityListener(cap, false);
+      });
+
+    this.homey.flow.getActionCard('start_backwash')
+      .registerRunListener(async (args) => {
+        await args.device.triggerCapabilityListener('backwash_onoff', true);
+      });
+
+    this.homey.flow.getActionCard('stop_backwash')
+      .registerRunListener(async (args) => {
+        await args.device.triggerCapabilityListener('backwash_onoff', false);
+      });
+
+    this.homey.flow.getActionCard('open_cover')
+      .registerRunListener(async (args) => {
+        await args.device.triggerCapabilityListener('cover_onoff', true);
+      });
+
+    this.homey.flow.getActionCard('close_cover')
+      .registerRunListener(async (args) => {
+        await args.device.triggerCapabilityListener('cover_onoff', false);
+      });
+
+    this.homey.flow.getActionCard('set_hydrolysis_level')
+      .registerRunListener(async (args) => {
+        await args.device.triggerCapabilityListener('target_hydrolysis_level', args.level);
+      });
+
+    this.homey.flow.getActionCard('set_filtration_mode')
+      .registerRunListener(async (args) => {
+        await args.device.triggerCapabilityListener('filtration_mode', args.mode);
+      });
+
+    this.homey.flow.getActionCard('turn_filtration_on')
+      .registerRunListener(async (args) => {
+        await args.device.triggerCapabilityListener('filtration_mode', 'manual');
+      });
+
+    this.homey.flow.getActionCard('turn_filtration_off')
+      .registerRunListener(async (args) => {
+        await args.device.triggerCapabilityListener('filtration_mode', 'auto');
+      });
+
+    this.homey.flow.getActionCard('set_filtration_speed')
+      .registerRunListener(async (args) => {
+        await args.device.triggerCapabilityListener('filtration_speed', args.speed);
+      });
+
+    // Condition cards
+    this.homey.flow.getConditionCard('is_filtration_running')
+      .registerRunListener(async (args) => {
+        return args.device.getCapabilityValue('status_filtration') === true;
+      });
+
+    this.homey.flow.getConditionCard('is_light_on')
+      .registerRunListener(async (args) => {
+        return args.device.getCapabilityValue('lighting_onoff') === true;
+      });
+
+    this.homey.flow.getConditionCard('is_chlorination_shock_active')
+      .registerRunListener(async (args) => {
+        return args.device.getCapabilityValue('chlorination_shock') === true;
+      });
   }
 
   async onPair(session: Homey.Driver.PairSession) {

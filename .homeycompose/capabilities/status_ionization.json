@@ -1,0 +1,21 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Ionization"
+  },
+  "units": {
+    "en": "mA"
+  },
+  "desc": {
+    "en": "Current ionization level"
+  },
+  "insights": false,
+  "chartType": "spline",
+  "decimals": 0,
+  "min": 0,
+  "max": 250,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/ionization.svg"
+}

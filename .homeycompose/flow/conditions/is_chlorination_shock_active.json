@@ -1,0 +1,15 @@
+{
+  "title": {
+    "en": "Chlorination shock !{{is|is not}} active"
+  },
+  "hint": {
+    "en": "Check if chlorination shock is active"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=aquascenic"
+    }
+  ]
+}

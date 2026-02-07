@@ -1,0 +1,30 @@
+{
+  "title": {
+    "en": "Set filtration mode"
+  },
+  "titleFormatted": {
+    "en": "Set filtration mode to [[mode]]"
+  },
+  "hint": {
+    "en": "Set the filtration pump mode"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=aquascenic"
+    },
+    {
+      "type": "dropdown",
+      "name": "mode",
+      "title": {
+        "en": "Mode"
+      },
+      "values": [
+        { "id": "auto", "title": { "en": "Automatic" } },
+        { "id": "manual", "title": { "en": "Manual" } },
+        { "id": "smart", "title": { "en": "Smart" } }
+      ]
+    }
+  ]
+}

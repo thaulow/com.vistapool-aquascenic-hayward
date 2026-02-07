@@ -1,0 +1,39 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Ionization Activation"
+  },
+  "desc": {
+    "en": "Ionization activation duration"
+  },
+  "values": [
+    {
+      "id": "10",
+      "title": {
+        "en": "10 minutes"
+      }
+    },
+    {
+      "id": "20",
+      "title": {
+        "en": "20 minutes"
+      }
+    },
+    {
+      "id": "30",
+      "title": {
+        "en": "30 minutes"
+      }
+    },
+    {
+      "id": "always",
+      "title": {
+        "en": "Always"
+      }
+    }
+  ],
+  "getable": true,
+  "setable": true,
+  "uiComponent": "picker",
+  "icon": "/assets/capabilities/ionization.svg"
+}

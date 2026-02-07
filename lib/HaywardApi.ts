@@ -7,7 +7,7 @@ import {
   AuthTokens,
   PoolData,
 } from './types';
-import { parseFields, flattenObject } from './FirestoreParser';
+import { parseFields, flattenObject, buildNestedFields } from './FirestoreParser';
 
 const API_KEY = 'AIzaSyBLaxiyZ2nS1KgRBqWe-NY4EG7OzG5fKpE';
 const AUTH_URL = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${API_KEY}`;
@@ -160,6 +160,43 @@ export class HaywardApi {
     const doc = await response.json() as FirestoreDocument;
     const parsed = parseFields(doc.fields);
     return flattenObject(parsed) as PoolData;
+  }
+
+  async updatePoolField(poolId: string, fieldPath: string, value: any): Promise<void> {
+    const idToken = await this.ensureValidToken();
+    const url = `${FIRESTORE_BASE}/pools/${poolId}?updateMask.fieldPaths=${encodeURIComponent(fieldPath)}`;
+    const fields = buildNestedFields(fieldPath, value);
+
+    this.log(`Updating ${fieldPath} = ${JSON.stringify(value)}`);
+
+    let response = await fetch(url, {
+      method: 'PATCH',
+      headers: {
+        'Authorization': `Bearer ${idToken}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ fields }),
+    });
+
+    if (response.status === 401 || response.status === 403) {
+      this.tokens = null;
+      const newToken = await this.ensureValidToken();
+      response = await fetch(url, {
+        method: 'PATCH',
+        headers: {
+          'Authorization': `Bearer ${newToken}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ fields }),
+      });
+    }
+
+    if (!response.ok) {
+      const errorBody = await response.text().catch(() => '');
+      throw new HaywardApiError(`Failed to update ${fieldPath}: HTTP ${response.status} ${errorBody}`, response.status);
+    }
+
+    this.log(`Successfully updated ${fieldPath}`);
   }
 
   async testConnection(poolId: string): Promise<boolean> {

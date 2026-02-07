@@ -1,0 +1,18 @@
+{
+  "title": {
+    "en": "Turn filtration on"
+  },
+  "titleFormatted": {
+    "en": "Turn filtration on"
+  },
+  "hint": {
+    "en": "Turn on the filtration pump (sets mode to manual)"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=aquascenic"
+    }
+  ]
+}

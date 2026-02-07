@@ -1,0 +1,15 @@
+{
+  "title": {
+    "en": "Filtration stopped"
+  },
+  "hint": {
+    "en": "When the filtration pump stops running"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=aquascenic"
+    }
+  ]
+}

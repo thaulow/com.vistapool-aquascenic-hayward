@@ -1,0 +1,31 @@
+{
+  "title": {
+    "en": "Turn relay on"
+  },
+  "titleFormatted": {
+    "en": "Turn [[relay]] on"
+  },
+  "hint": {
+    "en": "Turn on an auxiliary relay"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=aquascenic"
+    },
+    {
+      "type": "dropdown",
+      "name": "relay",
+      "title": {
+        "en": "Relay"
+      },
+      "values": [
+        { "id": "1", "title": { "en": "Relay 1" } },
+        { "id": "2", "title": { "en": "Relay 2" } },
+        { "id": "3", "title": { "en": "Relay 3" } },
+        { "id": "4", "title": { "en": "Relay 4" } }
+      ]
+    }
+  ]
+}

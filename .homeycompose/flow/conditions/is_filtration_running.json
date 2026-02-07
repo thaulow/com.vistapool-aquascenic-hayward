@@ -1,0 +1,15 @@
+{
+  "title": {
+    "en": "Filtration !{{is|is not}} running"
+  },
+  "hint": {
+    "en": "Check if the filtration pump is running"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=aquascenic"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "title": {
+    "en": "Turn pool light off"
+  },
+  "titleFormatted": {
+    "en": "Turn pool light off"
+  },
+  "hint": {
+    "en": "Turn off the pool light"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=aquascenic"
+    }
+  ]
+}
