@@ -1,6 +1,6 @@
 {
   "id": "com.vistapool.vistapool-sugarvalley-hayward",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -15,6 +15,7 @@
   "category": [
     "appliances"
   ],
+  "brandColor": "#2980B9",
   "permissions": [],
   "images": {
     "small": "/assets/images/small.png",

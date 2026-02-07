@@ -1,3 +1,332 @@
 {
-  "_comment": "This file is generated. Please edit .homeycompose/app.json instead."
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.vistapool.vistapool-sugarvalley-hayward",
+  "version": "1.0.1",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Vistapool, Sugarvalley and Hayward"
+  },
+  "description": {
+    "en": "Add support for Vistapool devices such as Sugar Valley, Hidrolife and Hayward"
+  },
+  "category": [
+    "appliances"
+  ],
+  "brandColor": "#2980B9",
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Thomas Thaulow",
+    "email": "thaulow@thaulow.co"
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "Aquascenic Pool Controller"
+      },
+      "class": "other",
+      "capabilities": [
+        "measure_temperature",
+        "measure_ph",
+        "measure_orp",
+        "measure_salt_level",
+        "measure_salt_cell_hours",
+        "status_filtration",
+        "status_electrolysis",
+        "measure_wifi_signal"
+      ],
+      "capabilitiesOptions": {
+        "measure_temperature": {
+          "title": {
+            "en": "Water Temperature"
+          }
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "images": {
+        "small": "/drivers/aquascenic/assets/images/small.png",
+        "large": "/drivers/aquascenic/assets/images/large.png",
+        "xlarge": "/drivers/aquascenic/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "title": {
+              "en": "Connect to Hayward Cloud"
+            },
+            "usernameLabel": {
+              "en": "Email"
+            },
+            "usernamePlaceholder": {
+              "en": "your-email@example.com"
+            },
+            "passwordLabel": {
+              "en": "Password"
+            },
+            "passwordPlaceholder": {
+              "en": "Your Hayward/Aquascenic account password"
+            }
+          }
+        },
+        {
+          "id": "pincode",
+          "template": "pincode",
+          "options": {
+            "title": {
+              "en": "Enter Pool ID"
+            },
+            "type": "text",
+            "length": 20
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "title": {
+              "en": "Reconnect to Hayward Cloud"
+            },
+            "usernameLabel": {
+              "en": "Email"
+            },
+            "usernamePlaceholder": {
+              "en": "your-email@example.com"
+            },
+            "passwordLabel": {
+              "en": "Password"
+            },
+            "passwordPlaceholder": {
+              "en": "Your Hayward/Aquascenic account password"
+            }
+          }
+        }
+      ],
+      "id": "aquascenic",
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Polling"
+          },
+          "children": [
+            {
+              "id": "poll_interval",
+              "type": "number",
+              "label": {
+                "en": "Poll Interval (minutes)"
+              },
+              "hint": {
+                "en": "How often to fetch data from the cloud. Lower values give faster updates."
+              },
+              "value": 5,
+              "min": 1,
+              "max": 60,
+              "step": 1,
+              "units": {
+                "en": "min"
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Device Information"
+          },
+          "children": [
+            {
+              "id": "firmware_version",
+              "type": "label",
+              "label": {
+                "en": "Firmware Version"
+              },
+              "value": "-"
+            },
+            {
+              "id": "wifi_version",
+              "type": "label",
+              "label": {
+                "en": "WiFi Module Version"
+              },
+              "value": "-"
+            },
+            {
+              "id": "pool_id",
+              "type": "label",
+              "label": {
+                "en": "Pool ID"
+              },
+              "value": "-"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "capabilities": {
+    "measure_orp": {
+      "type": "number",
+      "title": {
+        "en": "ORP"
+      },
+      "units": {
+        "en": "mV"
+      },
+      "insights": true,
+      "desc": {
+        "en": "Oxidation-Reduction Potential"
+      },
+      "chartType": "spline",
+      "decimals": 0,
+      "min": 0,
+      "max": 1000,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/orp.svg"
+    },
+    "measure_ph": {
+      "type": "number",
+      "title": {
+        "en": "pH"
+      },
+      "units": {
+        "en": "pH"
+      },
+      "insights": true,
+      "desc": {
+        "en": "Water pH level"
+      },
+      "chartType": "spline",
+      "decimals": 2,
+      "min": 0,
+      "max": 14,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/ph.svg"
+    },
+    "measure_salt_cell_hours": {
+      "type": "number",
+      "title": {
+        "en": "Cell Runtime"
+      },
+      "units": {
+        "en": "h"
+      },
+      "insights": true,
+      "desc": {
+        "en": "Salt cell total runtime in hours"
+      },
+      "chartType": "stepLine",
+      "decimals": 0,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/cell.svg"
+    },
+    "measure_salt_level": {
+      "type": "number",
+      "title": {
+        "en": "Salt Level"
+      },
+      "units": {
+        "en": "g/L"
+      },
+      "insights": true,
+      "desc": {
+        "en": "Salt concentration level"
+      },
+      "chartType": "spline",
+      "decimals": 1,
+      "min": 0,
+      "max": 10,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/salt.svg"
+    },
+    "measure_wifi_signal": {
+      "type": "number",
+      "title": {
+        "en": "WiFi Signal"
+      },
+      "units": {
+        "en": "dBm"
+      },
+      "insights": true,
+      "desc": {
+        "en": "Controller WiFi signal strength"
+      },
+      "chartType": "spline",
+      "decimals": 0,
+      "min": -100,
+      "max": 0,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/wifi.svg"
+    },
+    "status_electrolysis": {
+      "type": "boolean",
+      "title": {
+        "en": "Electrolysis"
+      },
+      "desc": {
+        "en": "Salt electrolysis active"
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Electrolysis started"
+      },
+      "insightsTitleFalse": {
+        "en": "Electrolysis stopped"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/electrolysis.svg"
+    },
+    "status_filtration": {
+      "type": "boolean",
+      "title": {
+        "en": "Filtration"
+      },
+      "desc": {
+        "en": "Filtration pump running"
+      },
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Filtration started"
+      },
+      "insightsTitleFalse": {
+        "en": "Filtration stopped"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/filtration.svg"
+    }
+  }
 }
