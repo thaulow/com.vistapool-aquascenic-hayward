@@ -1,0 +1,28 @@
+{
+  "id": "com.vistapool.vistapool-sugarvalley-hayward",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Vistapool, Sugarvalley and Hayward"
+  },
+  "description": {
+    "en": "Add support for Vistapool devices such as Sugar Valley, Hidrolife and Hayward"
+  },
+  "category": [
+    "appliances"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Thomas Thaulow",
+    "email": "thaulow@thaulow.co"
+  }
+}
