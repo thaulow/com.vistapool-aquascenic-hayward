@@ -54,14 +54,13 @@
       }
     },
     {
-      "id": "pincode",
-      "template": "pincode",
-      "options": {
-        "title": {
-          "en": "Enter Pool ID"
-        },
-        "type": "text",
-        "length": 20
+      "id": "pool_id"
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
       }
     },
     {

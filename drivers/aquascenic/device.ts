@@ -58,12 +58,16 @@ class AquascenicDevice extends Homey.Device {
 
   async onInit() {
     this.log('AquascenicDevice has been initialized');
+    this.log('Device data:', JSON.stringify(this.getData()));
+    this.log('Device store keys:', JSON.stringify(Object.keys(this.getStore())));
 
     const email = this.getStoreValue('email');
     const password = this.getStoreValue('password');
     this.poolId = this.getStoreValue('poolId') || this.getData().id;
+    this.log('Pool ID:', this.poolId);
 
     if (!email || !password) {
+      this.log('Missing credentials - email:', !!email, 'password:', !!password);
       this.setUnavailable('No credentials configured. Please repair the device.').catch(this.error);
       return;
     }
@@ -100,6 +104,12 @@ class AquascenicDevice extends Homey.Device {
 
     try {
       const data = await this.api.fetchPoolData(this.poolId);
+      this.log('Poll data keys:', Object.keys(data).join(', '));
+
+      // Log values for each mapped capability
+      for (const m of CAPABILITY_MAP) {
+        this.log(`  ${m.capability}: raw=${data[m.firestoreKey]}`);
+      }
 
       if (data.present === false) {
         this.setWarning('Pool controller is offline').catch(this.error);

@@ -28,8 +28,9 @@ class AquascenicDriver extends Homey.Driver {
       return true;
     });
 
-    session.setHandler('pincode', async (code: string[]) => {
-      poolId = code.join('').trim();
+    session.setHandler('set_pool_id', async (id: string) => {
+      this.log('set_pool_id called with:', id);
+      poolId = id.trim();
 
       if (!poolId) {
         throw new Error('Please enter your Pool ID.');
@@ -39,16 +40,20 @@ class AquascenicDriver extends Homey.Driver {
         throw new Error('Not authenticated. Please go back and log in.');
       }
 
-      const isValid = await api.testConnection(poolId);
-      if (!isValid) {
-        throw new Error('Could not find a pool with this ID. Please check the Pool ID in your Hayward/Aquascenic app.');
+      try {
+        const data = await api.fetchPoolData(poolId);
+        this.log('Pool data fetched successfully, keys:', Object.keys(data));
+      } catch (err: any) {
+        this.error('Pool ID validation failed:', err.message);
+        throw new Error(`Could not find a pool with this ID: ${err.message}`);
       }
 
       return true;
     });
 
     session.setHandler('list_devices', async () => {
-      return [
+      this.log('list_devices called, poolId:', poolId);
+      const devices = [
         {
           name: 'Aquascenic Pool',
           data: {
@@ -61,6 +66,8 @@ class AquascenicDriver extends Homey.Driver {
           },
         },
       ];
+      this.log('Returning devices:', JSON.stringify(devices.map(d => ({ name: d.name, id: d.data.id }))));
+      return devices;
     });
   }
 

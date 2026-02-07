@@ -1,19 +1,19 @@
 {
   "type": "number",
   "title": {
-    "en": "Salt Level"
+    "en": "Hydrolysis"
   },
   "units": {
-    "en": "g/L"
+    "en": "%"
   },
   "insights": true,
   "desc": {
-    "en": "Salt concentration level"
+    "en": "Hydrolysis production level"
   },
   "chartType": "spline",
   "decimals": 1,
   "min": 0,
-  "max": 10,
+  "max": 100,
   "getable": true,
   "setable": false,
   "uiComponent": "sensor",
