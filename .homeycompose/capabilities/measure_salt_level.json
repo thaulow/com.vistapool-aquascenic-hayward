@@ -1,0 +1,21 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Salt Level"
+  },
+  "units": {
+    "en": "g/L"
+  },
+  "insights": true,
+  "desc": {
+    "en": "Salt concentration level"
+  },
+  "chartType": "spline",
+  "decimals": 1,
+  "min": 0,
+  "max": 10,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/salt.svg"
+}

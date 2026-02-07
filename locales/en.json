@@ -1,1 +1,25 @@
-{}
+{
+  "capability": {
+    "measure_ph": {
+      "label": "pH"
+    },
+    "measure_orp": {
+      "label": "ORP"
+    },
+    "measure_salt_level": {
+      "label": "Salt Level"
+    },
+    "measure_salt_cell_hours": {
+      "label": "Cell Runtime"
+    },
+    "status_filtration": {
+      "label": "Filtration"
+    },
+    "status_electrolysis": {
+      "label": "Electrolysis"
+    },
+    "measure_wifi_signal": {
+      "label": "WiFi Signal"
+    }
+  }
+}

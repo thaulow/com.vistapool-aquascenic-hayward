@@ -1,0 +1,59 @@
+[
+  {
+    "type": "group",
+    "label": {
+      "en": "Polling"
+    },
+    "children": [
+      {
+        "id": "poll_interval",
+        "type": "number",
+        "label": {
+          "en": "Poll Interval (minutes)"
+        },
+        "hint": {
+          "en": "How often to fetch data from the cloud. Lower values give faster updates."
+        },
+        "value": 5,
+        "min": 1,
+        "max": 60,
+        "step": 1,
+        "units": {
+          "en": "min"
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Device Information"
+    },
+    "children": [
+      {
+        "id": "firmware_version",
+        "type": "label",
+        "label": {
+          "en": "Firmware Version"
+        },
+        "value": "-"
+      },
+      {
+        "id": "wifi_version",
+        "type": "label",
+        "label": {
+          "en": "WiFi Module Version"
+        },
+        "value": "-"
+      },
+      {
+        "id": "pool_id",
+        "type": "label",
+        "label": {
+          "en": "Pool ID"
+        },
+        "value": "-"
+      }
+    ]
+  }
+]

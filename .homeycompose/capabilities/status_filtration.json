@@ -1,0 +1,20 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Filtration"
+  },
+  "desc": {
+    "en": "Filtration pump running"
+  },
+  "insights": true,
+  "insightsTitleTrue": {
+    "en": "Filtration started"
+  },
+  "insightsTitleFalse": {
+    "en": "Filtration stopped"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/filtration.svg"
+}

@@ -1,0 +1,21 @@
+{
+  "type": "number",
+  "title": {
+    "en": "ORP"
+  },
+  "units": {
+    "en": "mV"
+  },
+  "insights": true,
+  "desc": {
+    "en": "Oxidation-Reduction Potential"
+  },
+  "chartType": "spline",
+  "decimals": 0,
+  "min": 0,
+  "max": 1000,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/orp.svg"
+}

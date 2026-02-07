@@ -1,0 +1,21 @@
+{
+  "type": "number",
+  "title": {
+    "en": "pH"
+  },
+  "units": {
+    "en": "pH"
+  },
+  "insights": true,
+  "desc": {
+    "en": "Water pH level"
+  },
+  "chartType": "spline",
+  "decimals": 2,
+  "min": 0,
+  "max": 14,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/ph.svg"
+}

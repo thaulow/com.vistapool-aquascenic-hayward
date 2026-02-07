@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Cell Runtime"
+  },
+  "units": {
+    "en": "h"
+  },
+  "insights": true,
+  "desc": {
+    "en": "Salt cell total runtime in hours"
+  },
+  "chartType": "stepLine",
+  "decimals": 0,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/cell.svg"
+}

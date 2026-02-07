@@ -1,0 +1,21 @@
+{
+  "type": "number",
+  "title": {
+    "en": "WiFi Signal"
+  },
+  "units": {
+    "en": "dBm"
+  },
+  "insights": true,
+  "desc": {
+    "en": "Controller WiFi signal strength"
+  },
+  "chartType": "spline",
+  "decimals": 0,
+  "min": -100,
+  "max": 0,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/wifi.svg"
+}
