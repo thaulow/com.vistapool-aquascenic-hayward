@@ -1,17 +1,17 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.vistapool.vistapool-sugarvalley-hayward",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
     "local"
   ],
   "name": {
-    "en": "Vistapool, Sugarvalley and Hayward"
+    "en": "Vistapool & Hayward"
   },
   "description": {
-    "en": "Add support for Vistapool devices such as Sugar Valley, Hidrolife and Hayward"
+    "en": "Add support for Vistapool devices such as Hayward Aquarite, Sugar Valley, Hidrolife, DA-GEN, Vistapool, Poolwatch and Kripsol"
   },
   "category": [
     "appliances"
