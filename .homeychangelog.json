@@ -13,5 +13,8 @@
   },
   "1.0.5": {
     "en": "renamed application"
+  },
+  "1.0.6": {
+    "en": "Added flowcards for actions"
   }
 }
