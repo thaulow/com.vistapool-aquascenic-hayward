@@ -25,5 +25,8 @@
   },
   "1.0.9": {
     "en": "added driver image"
+  },
+  "1.0.10": {
+    "en": "Changed device images"
   }
 }
