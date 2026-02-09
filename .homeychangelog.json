@@ -28,5 +28,8 @@
   },
   "1.0.10": {
     "en": "Changed device images"
+  },
+  "1.0.11": {
+    "en": "New driver icon, updated description"
   }
 }
