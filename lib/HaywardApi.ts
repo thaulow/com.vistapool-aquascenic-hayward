@@ -14,6 +14,7 @@ const AUTH_URL = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithP
 const TOKEN_URL = `https://securetoken.googleapis.com/v1/token?key=${API_KEY}`;
 const FIRESTORE_BASE = 'https://firestore.googleapis.com/v1/projects/hayward-europe/databases/(default)/documents';
 
+const REFERER = 'https://vistapool.es/';
 const TOKEN_REFRESH_BUFFER_MS = 5 * 60 * 1000;
 
 export class HaywardApiError extends Error {
@@ -52,7 +53,7 @@ export class HaywardApi {
     this.log('Authenticating with Firebase...');
     const response = await fetch(AUTH_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', 'Referer': REFERER },
       body: JSON.stringify({
         email: this.email,
         password: this.password,
@@ -88,7 +89,7 @@ export class HaywardApi {
     this.log('Refreshing Firebase token...');
     const response = await fetch(TOKEN_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Referer': REFERER },
       body: `grant_type=refresh_token&refresh_token=${encodeURIComponent(this.tokens.refreshToken)}`,
     });
 
@@ -138,6 +139,7 @@ export class HaywardApi {
       headers: {
         'Authorization': `Bearer ${idToken}`,
         'Content-Type': 'application/json',
+        'Referer': REFERER,
       },
     });
 
@@ -149,6 +151,7 @@ export class HaywardApi {
         headers: {
           'Authorization': `Bearer ${newToken}`,
           'Content-Type': 'application/json',
+          'Referer': REFERER,
         },
       });
     }
@@ -174,6 +177,7 @@ export class HaywardApi {
       headers: {
         'Authorization': `Bearer ${idToken}`,
         'Content-Type': 'application/json',
+        'Referer': REFERER,
       },
       body: JSON.stringify({ fields }),
     });
@@ -186,6 +190,7 @@ export class HaywardApi {
         headers: {
           'Authorization': `Bearer ${newToken}`,
           'Content-Type': 'application/json',
+          'Referer': REFERER,
         },
         body: JSON.stringify({ fields }),
       });
